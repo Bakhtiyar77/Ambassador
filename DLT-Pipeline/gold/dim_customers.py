@@ -1,10 +1,11 @@
 import dlt 
 
-
+#create dimension customers table
 dlt.create_streaming_table(
     name = "dim_customers"
 )
 
+#create auto cdc flow from customers_enr_view to dim_customers table for SCD Type 2
 dlt.create_auto_cdc_flow(
     target = "dim_customers",
     source = "customers_enr_view",
