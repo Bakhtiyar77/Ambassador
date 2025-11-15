@@ -1,10 +1,11 @@
 import dlt 
 
-
+#Create streaming table for sales_enr_view table
 dlt.create_streaming_table(
     name = "fact_sales"
 )
 
+#Create auto cdc flow from sales_enr_view to fact_sales table for SCD Type 1
 dlt.create_auto_cdc_flow(
     target = "fact_sales",
     source = "sales_enr_view",
